@@ -2,12 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Phone,
   Mail,
-  MapPin,
   Clock,
   Zap,
-  Home,
-  Building2,
-  Factory,
+  Refrigerator,
+  WashingMachine,
+  CookingPot,
   Wrench,
   Shield,
   Award,
@@ -17,17 +16,17 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Claremont Electrical | Trusted Electricians Since 1955" },
+      { title: "Claremont Electrical | Appliance Repairs Since 1955" },
       {
         name: "description",
         content:
-          "Claremont Electrical provides reliable residential, commercial and industrial electrical services in Claremont and surrounding areas. Get a free quote today.",
+          "Claremont Electrical repairs fridges, washing machines, ovens, dryers and dishwashers. Fast, affordable appliance repairs with a workmanship guarantee.",
       },
-      { property: "og:title", content: "Claremont Electrical | Trusted Electricians Since 1955" },
+      { property: "og:title", content: "Claremont Electrical | Appliance Repairs Since 1955" },
       {
         property: "og:description",
         content:
-          "Reliable electrical services for homes and businesses. Established in 1955.",
+          "Expert repairs for fridges, washers, ovens and more. Established in 1955.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -38,46 +37,46 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
-    icon: Home,
-    title: "Residential",
+    icon: Refrigerator,
+    title: "Fridges & Freezers",
     description:
-      "Wiring, lighting, DB boards, geyser installations and home safety inspections for peace of mind.",
+      "Cooling faults, gas regassing, thermostats, compressors and door seal replacements.",
   },
   {
-    icon: Building2,
-    title: "Commercial",
+    icon: WashingMachine,
+    title: "Washers & Dryers",
     description:
-      "Office fit-outs, retail lighting, maintenance contracts and energy-efficient upgrades.",
+      "Drum bearings, pumps, motors, error codes and drainage problems on all major brands.",
   },
   {
-    icon: Factory,
-    title: "Industrial",
+    icon: CookingPot,
+    title: "Ovens & Stoves",
     description:
-      "Three-phase systems, machinery supply, factory maintenance and high-voltage installations.",
+      "Elements, thermostats, hob plates, timers and control boards repaired or replaced.",
   },
   {
     icon: Wrench,
-    title: "Emergency Repairs",
+    title: "Fast Fault Finding",
     description:
-      "24/7 call-out service for power failures, tripping boards and urgent electrical faults.",
+      "Accurate diagnostics with an upfront quote before any repair work begins.",
   },
 ];
 
 const highlights = [
   {
     icon: Shield,
-    title: "Licensed & Insured",
-    description: "Fully accredited electricians with comprehensive insurance cover.",
+    title: "Guaranteed Repairs",
+    description: "Every repair is backed by a workmanship guarantee and genuine parts.",
   },
   {
     icon: Award,
     title: "Since 1955",
-    description: "Over 70 years of trusted electrical workmanship in the community.",
+    description: "Over 70 years of appliance repair experience across every major brand.",
   },
   {
     icon: Users,
-    title: "Local Experts",
-    description: "Claremont-based team that understands local regulations and needs.",
+    title: "Honest Advice",
+    description: "We tell you when a repair makes sense — and when it simply doesn't.",
   },
 ];
 
@@ -92,11 +91,11 @@ function HomePage() {
               Est. 1955
             </p>
             <h1 className="text-balance text-4xl font-extrabold tracking-tight text-navy-foreground md:text-5xl lg:text-6xl">
-              Reliable Electrical Services You Can Trust
+              Electrical Appliance Repairs You Can Trust
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-navy-foreground/80 md:text-xl">
-              Claremont Electrical delivers safe, professional electrical solutions for
-              homes, businesses and industrial sites across the Western Cape.
+              Claremont Electrical repairs fridges, washing machines, tumble dryers, ovens
+              and dishwashers — quickly, affordably and properly.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -104,7 +103,7 @@ function HomePage() {
                 to="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-base font-semibold text-gold-foreground transition-transform hover:scale-105"
               >
-                Get a Free Quote
+                Book a Repair
               </Link>
               <a
                 href="tel:+27211234567"
@@ -117,7 +116,7 @@ function HomePage() {
           </div>
 
           {/* Contact info bar */}
-          <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-2xl border border-navy-foreground/10 bg-navy-foreground/5 p-6 backdrop-blur-sm sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-2xl border border-navy-foreground/10 bg-navy-foreground/5 p-6 backdrop-blur-sm sm:grid-cols-3">
             <a
               href="tel:+27211234567"
               className="flex items-center gap-3 text-navy-foreground/90 transition-colors hover:text-gold"
@@ -144,15 +143,6 @@ function HomePage() {
             </a>
             <div className="flex items-center gap-3 text-navy-foreground/90">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
-                <MapPin className="h-5 w-5" />
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-medium text-navy-foreground/60">Address</p>
-                <p className="truncate text-sm font-semibold">12 Main Road, Claremont</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 text-navy-foreground/90">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
                 <Clock className="h-5 w-5" />
               </div>
               <div className="min-w-0">
@@ -173,11 +163,11 @@ function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-gold">Our Services</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Electrical Solutions for Every Need
+              We Fix the Appliances You Rely On
             </h2>
             <p className="mt-4 text-muted-foreground">
-              From routine maintenance to complex industrial installations, we have the skills
-              and experience to keep your power on.
+              From a fridge that won't cool to an oven that won't heat, our technicians
+              diagnose the fault and get your appliance working again.
             </p>
           </div>
 
@@ -209,12 +199,12 @@ function HomePage() {
                 Why Choose Us
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-                Decades of Experience, Delivered with Care
+                Repair It, Don't Replace It
               </h2>
               <p className="mt-4 text-muted-foreground">
-                We treat every project — big or small — with the same attention to detail and
-                commitment to safety. Our reputation has been built on honest advice, fair pricing
-                and workmanship that lasts.
+                A good repair costs a fraction of a new appliance. We quote upfront, use
+                quality parts, and stand behind every job we do — the same way we have
+                since 1955.
               </p>
 
               <div className="mt-8 space-y-6">
@@ -239,20 +229,20 @@ function HomePage() {
                   <p className="mt-1 text-sm font-medium text-foreground/80">Years Experience</p>
                 </div>
                 <div className="rounded-xl bg-navy p-6 text-center text-navy-foreground">
-                  <p className="text-4xl font-extrabold text-gold">24/7</p>
+                  <p className="text-4xl font-extrabold text-gold">All</p>
                   <p className="mt-1 text-sm font-medium text-navy-foreground/80">
-                    Emergency Service
+                    Major Brands
                   </p>
                 </div>
                 <div className="rounded-xl bg-navy p-6 text-center text-navy-foreground">
                   <p className="text-4xl font-extrabold text-gold">100%</p>
                   <p className="mt-1 text-sm font-medium text-navy-foreground/80">
-                    Safety Focused
+                    Upfront Quotes
                   </p>
                 </div>
                 <div className="rounded-xl bg-gold-muted p-6 text-center">
-                  <p className="text-4xl font-extrabold text-navy">500+</p>
-                  <p className="mt-1 text-sm font-medium text-foreground/80">Projects Completed</p>
+                  <p className="text-4xl font-extrabold text-navy">10k+</p>
+                  <p className="mt-1 text-sm font-medium text-foreground/80">Appliances Repaired</p>
                 </div>
               </div>
             </div>
@@ -264,11 +254,11 @@ function HomePage() {
       <section className="bg-gold-muted py-16 md:py-24">
         <div className="container mx-auto px-4 text-center md:px-6">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Ready to get started?
+            Appliance giving trouble?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Contact us today for a free, no-obligation quote. Our friendly team is ready to help
-            with any electrical project.
+            Tell us the make, model and the fault, and we'll come back with a clear repair
+            quote — no obligation.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
