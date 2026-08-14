@@ -1,12 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Home,
-  Building2,
-  Factory,
+  Refrigerator,
+  WashingMachine,
+  CookingPot,
   Wrench,
-  ClipboardCheck,
-  Lightbulb,
-  Fan,
+  Microwave,
+  Coffee,
   ShieldCheck,
   Phone,
 } from "lucide-react";
@@ -14,17 +13,17 @@ import {
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services | Claremont Electrical" },
+      { title: "Appliance Repair Services | Claremont Electrical" },
       {
         name: "description",
         content:
-          "Explore Claremont Electrical's full range of residential, commercial, industrial and emergency electrical services.",
+          "Repairs for fridges, freezers, washing machines, tumble dryers, ovens, dishwashers and small appliances — all major brands.",
       },
-      { property: "og:title", content: "Services | Claremont Electrical" },
+      { property: "og:title", content: "Appliance Repair Services | Claremont Electrical" },
       {
         property: "og:description",
         content:
-          "Residential, commercial, industrial and emergency electrical services in Claremont.",
+          "Fridge, washer, dryer, oven and dishwasher repairs with upfront quotes and guaranteed workmanship.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -35,75 +34,75 @@ export const Route = createFileRoute("/services")({
 
 const serviceCategories = [
   {
-    icon: Home,
-    title: "Residential Electrical",
+    icon: Refrigerator,
+    title: "Fridge & Freezer Repairs",
     items: [
-      "New home wiring",
-      "Lighting design & installation",
-      "DB board upgrades",
-      "Geyser & stove connections",
-      "Home automation setup",
-      "Safety inspections",
+      "Not cooling or over-freezing",
+      "Compressor & fan replacement",
+      "Thermostat & sensor faults",
+      "Gas leaks and regassing",
+      "Door seal replacement",
+      "Water dispenser & ice maker faults",
     ],
   },
   {
-    icon: Building2,
-    title: "Commercial Electrical",
+    icon: WashingMachine,
+    title: "Washing Machine Repairs",
     items: [
-      "Office fit-outs",
-      "Retail lighting",
-      "Data & network cabling",
-      "Maintenance contracts",
-      "Energy-efficient upgrades",
-      "Generator integration",
+      "Not draining or spinning",
+      "Drum bearing replacement",
+      "Pump & motor faults",
+      "Water inlet & valve issues",
+      "Error code diagnostics",
+      "Leaks and excessive vibration",
     ],
   },
   {
-    icon: Factory,
-    title: "Industrial Electrical",
+    icon: CookingPot,
+    title: "Oven, Hob & Stove Repairs",
     items: [
-      "Three-phase systems",
-      "Machinery supply & installation",
-      "Factory maintenance",
-      "Motor control centres",
-      "Power distribution",
-      "High-voltage work",
+      "Element replacement",
+      "Thermostat calibration",
+      "Hob plate & induction faults",
+      "Door hinges & glass",
+      "Timer and control boards",
+      "Extractor fan repairs",
     ],
   },
   {
     icon: Wrench,
-    title: "Emergency Repairs",
+    title: "Tumble Dryer & Dishwasher",
     items: [
-      "24/7 call-outs",
-      "Power failure troubleshooting",
-      "Tripping DB boards",
-      "Fault finding",
-      "Rapid repairs",
-      "Post-storm restoration",
+      "Dryer not heating",
+      "Belt & drum repairs",
+      "Dishwasher not draining",
+      "Spray arm & filter blockages",
+      "Heating element replacement",
+      "Programme selector faults",
     ],
   },
   {
-    icon: ClipboardCheck,
-    title: "Compliance & Certificates",
+    icon: Microwave,
+    title: "Microwaves & Small Appliances",
     items: [
-      "Electrical compliance certificates",
-      "COC inspections",
-      "Insurance reports",
-      "Regulation advice",
-      "Remedial work",
-      "Periodic inspections",
+      "Microwave not heating",
+      "Turntable & door switch faults",
+      "Kettle & toaster repairs",
+      "Vacuum cleaner servicing",
+      "Food processor motors",
+      "Cable and plug replacement",
     ],
   },
   {
-    icon: Lightbulb,
-    title: "Lighting & Electrical Design",
+    icon: Coffee,
+    title: "Diagnostics & Servicing",
     items: [
-      "LED retrofits",
-      "Outdoor & security lighting",
-      "Smart lighting controls",
-      "Ceiling fan installation",
-      "Pool & landscape electrics",
-      "Custom electrical design",
+      "Full fault diagnosis",
+      "Upfront written quotes",
+      "Preventative servicing",
+      "Genuine replacement parts",
+      "Repair-or-replace advice",
+      "Workmanship guarantee",
     ],
   },
 ];
@@ -114,12 +113,13 @@ function ServicesPage() {
       {/* Page header */}
       <section className="gradient-navy py-16 md:py-24">
         <div className="container mx-auto px-4 text-center md:px-6">
-          <p className="text-sm font-semibold uppercase tracking-widest text-gold">What We Do</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-gold">What We Fix</p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-navy-foreground md:text-5xl">
-            Our Services
+            Our Repair Services
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-navy-foreground/80">
-            Comprehensive electrical solutions tailored to homes, businesses and industrial sites.
+            Expert repairs on household and commercial electrical appliances, across all
+            major brands.
           </p>
         </div>
       </section>
@@ -154,13 +154,12 @@ function ServicesPage() {
       {/* CTA */}
       <section className="bg-gold-muted py-16 md:py-24">
         <div className="container mx-auto px-4 text-center md:px-6">
-          <Fan className="mx-auto h-12 w-12 text-navy" />
+          <Wrench className="mx-auto h-12 w-12 text-navy" />
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Not sure what you need?
+            Not sure what's wrong?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Our team can assess your site and recommend the right solution for your budget and
-            requirements.
+            Describe the symptoms and we'll diagnose the fault, then quote before we repair.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
