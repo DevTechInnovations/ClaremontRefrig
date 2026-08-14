@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Mail, Phone, Clock } from "lucide-react";
 import logoAsset from "../assets/claremont-logo.png.asset.json";
 
 export function Footer() {
@@ -14,8 +14,8 @@ export function Footer() {
               className="h-10 w-auto"
             />
             <p className="text-sm leading-relaxed text-navy-foreground/80">
-              Trusted electrical contractors serving Claremont and surrounding
-              areas since 1955. Reliable, licensed, and committed to safety.
+              Expert electrical appliance repairs since 1955. Fridges, washing
+              machines, ovens, tumble dryers and more — fixed properly, first time.
             </p>
           </div>
 
@@ -47,11 +47,11 @@ export function Footer() {
               Services
             </h3>
             <ul className="space-y-2 text-sm text-navy-foreground/80">
-              <li>Residential Electrical</li>
-              <li>Commercial Electrical</li>
-              <li>Industrial Electrical</li>
-              <li>Emergency Repairs</li>
-              <li>Electrical Compliance</li>
+              <li>Fridge &amp; Freezer Repairs</li>
+              <li>Washing Machine &amp; Dryer Repairs</li>
+              <li>Oven, Hob &amp; Stove Repairs</li>
+              <li>Dishwasher Repairs</li>
+              <li>Small Appliance Repairs</li>
             </ul>
           </div>
 
@@ -76,17 +76,11 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <span className="text-navy-foreground/80">
-                  12 Main Road, Claremont, Cape Town
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span className="text-navy-foreground/80">
                   Mon - Fri: 08:00 - 17:00
                   <br />
-                  24/7 Emergency call-outs
+                  Urgent repairs by arrangement
                 </span>
               </li>
             </ul>
