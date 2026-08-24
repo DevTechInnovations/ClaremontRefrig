@@ -66,7 +66,7 @@ function ContactPage() {
 
               <div className="space-y-4">
                 <a
-                  href="tel:+27211234567"
+                  href="tel:+27824571799"
                   className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-gold"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
@@ -74,12 +74,12 @@ function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground">Phone</p>
-                    <p className="font-semibold text-foreground">(021) 123 4567</p>
+                    <p className="font-semibold text-foreground">082 457 1799 / 073 026 3190</p>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:info@claremontelectrical.co.za"
+                  href="mailto:crefriglyle@yahoo.com"
                   className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-gold"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
@@ -87,21 +87,9 @@ function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground">Email</p>
-                    <p className="font-semibold text-foreground">info@claremontelectrical.co.za</p>
+                    <p className="font-semibold text-foreground">crefriglyle@yahoo.com</p>
                   </div>
                 </a>
-
-                <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
-                    <MapPin className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-muted-foreground">Address</p>
-                    <p className="font-semibold text-foreground">
-                      12 Main Road, Claremont, Cape Town
-                    </p>
-                  </div>
-                </div>
 
                 <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
@@ -109,8 +97,8 @@ function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground">Business Hours</p>
-                    <p className="font-semibold text-foreground">Mon - Fri: 08:00 - 17:00</p>
-                    <p className="text-sm text-muted-foreground">24/7 Emergency call-outs</p>
+                    <p className="font-semibold text-foreground">Monday - Saturday: 8AM - 6PM</p>
+                    <p className="text-sm text-muted-foreground">Urgent repairs by arrangement</p>
                   </div>
                 </div>
               </div>
@@ -225,20 +213,6 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* Map placeholder */}
-      <section className="bg-muted py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="overflow-hidden rounded-2xl border border-border bg-card">
-            <div className="flex h-80 items-center justify-center bg-muted md:h-96">
-              <div className="text-center">
-                <MapPin className="mx-auto h-10 w-10 text-gold" />
-                <p className="mt-3 font-semibold text-foreground">12 Main Road, Claremont</p>
-                <p className="text-sm text-muted-foreground">Map integration can be added here</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

@@ -62,23 +62,23 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <a href="tel:+27211234567" className="text-navy-foreground/80 hover:text-gold">
-                  (021) 123 4567
+                <a href="tel:+27824571799" className="text-navy-foreground/80 hover:text-gold">
+                  082 457 1799 / 073 026 3190
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <a
-                  href="mailto:info@claremontelectrical.co.za"
+                  href="mailto:crefriglyle@yahoo.com"
                   className="text-navy-foreground/80 hover:text-gold"
                 >
-                  info@claremontelectrical.co.za
+                  crefriglyle@yahoo.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                 <span className="text-navy-foreground/80">
-                  Mon - Fri: 08:00 - 17:00
+                  Monday - Saturday: 8AM - 6PM
                   <br />
                   Urgent repairs by arrangement
                 </span>
