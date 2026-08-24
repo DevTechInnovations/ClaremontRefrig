@@ -8,6 +8,7 @@ import {
   WashingMachine,
   CookingPot,
   Wrench,
+  Plug,
   Shield,
   Award,
   Users,
@@ -53,6 +54,12 @@ const services = [
     title: "Ovens & Stoves",
     description:
       "Elements, thermostats, hob plates, timers and control boards repaired or replaced.",
+  },
+  {
+    icon: Plug,
+    title: "General Household Electrical",
+    description:
+      "Plug and socket repairs, light fittings, tripping circuits, switches and minor wiring faults.",
   },
   {
     icon: Wrench,
@@ -171,7 +178,7 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service.title}

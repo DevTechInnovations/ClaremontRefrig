@@ -8,6 +8,7 @@ import {
   Coffee,
   ShieldCheck,
   Phone,
+  Plug,
 } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
@@ -79,6 +80,18 @@ const serviceCategories = [
       "Spray arm & filter blockages",
       "Heating element replacement",
       "Programme selector faults",
+    ],
+  },
+  {
+    icon: Plug,
+    title: "General Household Electrical Repairs",
+    items: [
+      "Plug and socket replacement",
+      "Light fittings and dimmers",
+      "Tripping circuit breakers",
+      "Switch and isolator faults",
+      "Geyser electrical connections",
+      "Minor wiring repairs",
     ],
   },
   {
