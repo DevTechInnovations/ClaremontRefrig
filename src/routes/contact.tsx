@@ -162,7 +162,7 @@ function ContactPage() {
                       name="phone"
                       type="tel"
                       className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-foreground outline-none transition-colors focus:border-gold focus:ring-1 focus:ring-gold"
-                      placeholder="(021) 123 4567"
+                      placeholder="082 457 1799"
                     />
                   </div>
 
