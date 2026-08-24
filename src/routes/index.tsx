@@ -106,7 +106,7 @@ function HomePage() {
                 Book a Repair
               </Link>
               <a
-                href="tel:+27211234567"
+                href="tel:+27824571799"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-foreground/30 bg-transparent px-6 py-3 text-base font-medium text-navy-foreground transition-colors hover:bg-navy-foreground/10"
               >
                 <Phone className="h-5 w-5" />
@@ -118,7 +118,7 @@ function HomePage() {
           {/* Contact info bar */}
           <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-2xl border border-navy-foreground/10 bg-navy-foreground/5 p-6 backdrop-blur-sm sm:grid-cols-3">
             <a
-              href="tel:+27211234567"
+              href="tel:+27824571799"
               className="flex items-center gap-3 text-navy-foreground/90 transition-colors hover:text-gold"
             >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
@@ -126,11 +126,11 @@ function HomePage() {
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-medium text-navy-foreground/60">Phone</p>
-                <p className="truncate text-sm font-semibold">(021) 123 4567</p>
+                <p className="truncate text-sm font-semibold">082 457 1799 / 073 026 3190</p>
               </div>
             </a>
             <a
-              href="mailto:info@claremontelectrical.co.za"
+              href="mailto:crefriglyle@yahoo.com"
               className="flex items-center gap-3 text-navy-foreground/90 transition-colors hover:text-gold"
             >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
@@ -138,7 +138,7 @@ function HomePage() {
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-medium text-navy-foreground/60">Email</p>
-                <p className="truncate text-sm font-semibold">info@claremontelectrical.co.za</p>
+                <p className="truncate text-sm font-semibold">crefriglyle@yahoo.com</p>
               </div>
             </a>
             <div className="flex items-center gap-3 text-navy-foreground/90">
@@ -147,7 +147,7 @@ function HomePage() {
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-medium text-navy-foreground/60">Hours</p>
-                <p className="truncate text-sm font-semibold">Mon-Fri 08:00-17:00</p>
+                <p className="truncate text-sm font-semibold">Mon-Sat 8AM-6PM</p>
               </div>
             </div>
           </div>
@@ -268,11 +268,11 @@ function HomePage() {
               Request a Quote
             </Link>
             <a
-              href="tel:+27211234567"
+              href="tel:+27824571799"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-transparent px-6 py-3 text-base font-semibold text-foreground transition-colors hover:bg-foreground/5"
             >
               <Phone className="h-5 w-5" />
-              (021) 123 4567
+              082 457 1799 / 073 026 3190
             </a>
           </div>
         </div>

@@ -169,11 +169,11 @@ function ServicesPage() {
               Get in Touch
             </Link>
             <a
-              href="tel:+27211234567"
+              href="tel:+27824571799"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-transparent px-6 py-3 text-base font-semibold text-foreground transition-colors hover:bg-foreground/5"
             >
               <Phone className="h-5 w-5" />
-              (021) 123 4567
+              082 457 1799 / 073 026 3190
             </a>
           </div>
         </div>
