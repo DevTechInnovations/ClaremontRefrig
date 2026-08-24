@@ -14,6 +14,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
+      <div className="bg-gold py-2 text-center">
+        <div className="container mx-auto flex items-center justify-center gap-2 px-4 text-xs font-semibold text-gold-foreground md:text-sm">
+          <Award className="h-4 w-4" />
+          Over 70 years experience
+        </div>
+      </div>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center gap-3">
           <img

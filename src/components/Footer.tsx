@@ -51,6 +51,7 @@ export function Footer() {
               <li>Washing Machine &amp; Dryer Repairs</li>
               <li>Oven, Hob &amp; Stove Repairs</li>
               <li>Dishwasher Repairs</li>
+              <li>General Household Electrical Repairs</li>
               <li>Small Appliance Repairs</li>
             </ul>
           </div>

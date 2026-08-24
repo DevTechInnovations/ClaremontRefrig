@@ -83,6 +83,18 @@ const serviceCategories = [
     ],
   },
   {
+    icon: Plug,
+    title: "General Household Electrical Repairs",
+    items: [
+      "Plug and socket replacement",
+      "Light fittings and dimmers",
+      "Tripping circuit breakers",
+      "Switch and isolator faults",
+      "Geyser electrical connections",
+      "Minor wiring repairs",
+    ],
+  },
+  {
     icon: Microwave,
     title: "Microwaves & Small Appliances",
     items: [
