@@ -8,6 +8,7 @@ import {
   Coffee,
   ShieldCheck,
   Phone,
+  Plug,
 } from "lucide-react";
 
 export const Route = createFileRoute("/services")({

@@ -8,6 +8,7 @@ import {
   WashingMachine,
   CookingPot,
   Wrench,
+  Plug,
   Shield,
   Award,
   Users,

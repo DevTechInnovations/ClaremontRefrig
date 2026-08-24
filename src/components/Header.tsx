@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Award } from "lucide-react";
 import logoAsset from "../assets/claremont-logo.png.asset.json";
 
 const navLinks = [
