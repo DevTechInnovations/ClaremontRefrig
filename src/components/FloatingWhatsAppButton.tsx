@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WHATSAPP_NUMBER = "27211234567";
+const WHATSAPP_NUMBER = "27824571799";
 const WHATSAPP_MESSAGE = "Hi Claremont Electrical, I'd like to enquire about your services.";
 
 export function FloatingWhatsAppButton() {

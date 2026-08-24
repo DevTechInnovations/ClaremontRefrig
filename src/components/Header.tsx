@@ -38,11 +38,11 @@ export function Header() {
 
         <div className="hidden items-center gap-4 md:flex">
           <a
-            href="tel:+27211234567"
+            href="tel:+27824571799"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground transition-transform hover:scale-105"
           >
             <Phone className="h-4 w-4" />
-            (021) 123 4567
+            082 457 1799
           </a>
         </div>
 
@@ -70,11 +70,11 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="tel:+27211234567"
+              href="tel:+27824571799"
               className="mt-2 inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground"
             >
               <Phone className="h-4 w-4" />
-              (021) 123 4567
+              082 457 1799
             </a>
           </nav>
         </div>
