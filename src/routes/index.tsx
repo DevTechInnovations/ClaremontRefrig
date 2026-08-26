@@ -124,18 +124,18 @@ function HomePage() {
 
           {/* Contact info bar */}
           <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-2xl border border-navy-foreground/10 bg-navy-foreground/5 p-6 backdrop-blur-sm sm:grid-cols-3">
-            <a
-              href="tel:+27824571799"
-              className="flex items-center gap-3 text-navy-foreground/90 transition-colors hover:text-gold"
-            >
+            <div className="flex items-center gap-3 text-navy-foreground/90">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
                 <Phone className="h-5 w-5" />
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-medium text-navy-foreground/60">Phone</p>
-                <p className="truncate text-sm font-semibold">082 457 1799 / 073 026 3190</p>
+                <div className="flex flex-col text-sm font-semibold">
+                  <a href="tel:+27824571799" className="hover:text-gold">082 457 1799</a>
+                  <a href="tel:+27730263190" className="hover:text-gold">073 026 3190</a>
+                </div>
               </div>
-            </a>
+            </div>
             <a
               href="mailto:crefriglyle@yahoo.com"
               className="flex items-center gap-3 text-navy-foreground/90 transition-colors hover:text-gold"
