@@ -11,11 +11,25 @@ import {
   Plug,
   Microwave,
   Coffee,
+  Snowflake,
+  ChefHat,
   ShieldCheck,
   Shield,
   Award,
   Users,
 } from "lucide-react";
+import { WHATSAPP_HREF, WhatsAppIcon } from "@/components/whatsapp";
+import workshopRepairImage from "@/assets/workshop-repair.jpg";
+import heroTechnicianImage from "@/assets/hero-technician.jpg";
+import fridgeApplianceImage from "@/assets/fridge-appliance.jpg";
+import washingMachineApplianceImage from "@/assets/washing-machine-appliance.jpg";
+import ovenStoveApplianceImage from "@/assets/oven-stove-appliance.jpg";
+import tumbleDryerApplianceImage from "@/assets/tumble-dryer-appliance.jpg";
+import householdElectricalImage from "@/assets/household-electrical.jpg";
+import microwaveApplianceImage from "@/assets/microwave-appliance.jpg";
+import diagnosticsApplianceImage from "@/assets/diagnostics-appliance.jpg";
+import airconApplianceImage from "@/assets/aircon-appliance.jpg";
+import cateringApplianceImage from "@/assets/catering-appliance.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,6 +56,7 @@ export const Route = createFileRoute("/")({
 const serviceCategories = [
   {
     icon: Refrigerator,
+    image: fridgeApplianceImage,
     title: "Fridge & Freezer Repairs",
     items: [
       "Not cooling or over-freezing",
@@ -54,6 +69,7 @@ const serviceCategories = [
   },
   {
     icon: WashingMachine,
+    image: washingMachineApplianceImage,
     title: "Washing Machine Repairs",
     items: [
       "Not draining or spinning",
@@ -66,6 +82,7 @@ const serviceCategories = [
   },
   {
     icon: CookingPot,
+    image: ovenStoveApplianceImage,
     title: "Oven, Hob & Stove Repairs",
     items: [
       "Element replacement",
@@ -78,6 +95,7 @@ const serviceCategories = [
   },
   {
     icon: Wrench,
+    image: tumbleDryerApplianceImage,
     title: "Tumble Dryer & Dishwasher",
     items: [
       "Dryer not heating",
@@ -90,6 +108,7 @@ const serviceCategories = [
   },
   {
     icon: Plug,
+    image: householdElectricalImage,
     title: "General Household Electrical Repairs",
     items: [
       "Plug and socket replacement",
@@ -102,6 +121,7 @@ const serviceCategories = [
   },
   {
     icon: Microwave,
+    image: microwaveApplianceImage,
     title: "Microwaves & Small Appliances",
     items: [
       "Microwave not heating",
@@ -113,7 +133,34 @@ const serviceCategories = [
     ],
   },
   {
+    icon: Snowflake,
+    image: airconApplianceImage,
+    title: "Air Conditioning Repairs & Installation",
+    items: [
+      "All makes repaired and serviced",
+      "New unit supply and installation",
+      "Not cooling or not heating",
+      "Gas leaks and regassing",
+      "Noisy or leaking units",
+      "Routine servicing and maintenance",
+    ],
+  },
+  {
+    icon: ChefHat,
+    image: cateringApplianceImage,
+    title: "Catering Equipment Repairs",
+    items: [
+      "All makes of catering equipment",
+      "Commercial fridges & freezers",
+      "Ovens, stoves & fryers",
+      "Dishwashers & glasswashers",
+      "Urns, boilers & bain-maries",
+      "Preventative maintenance plans",
+    ],
+  },
+  {
     icon: Coffee,
+    image: diagnosticsApplianceImage,
     title: "Diagnostics & Servicing",
     items: [
       "Full fault diagnosis",
@@ -150,32 +197,43 @@ function HomePage() {
       {/* Hero */}
       <section className="gradient-navy relative overflow-hidden">
         <div className="container relative mx-auto px-4 py-16 md:px-6 md:py-24 lg:py-32">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-gold">
-              Est. 1955
-            </p>
-            <h1 className="text-balance text-4xl font-extrabold tracking-tight text-navy-foreground md:text-5xl lg:text-6xl">
-              Electrical Appliance Repairs You Can Trust
-            </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-navy-foreground/80 md:text-xl">
-              Claremont Electrical repairs fridges, washing machines, tumble dryers, ovens,
-              dishwashers and general household electrics — quickly, affordably and properly.
-            </p>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-xl lg:text-left">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-gold">
+                Established in 1955 — Over 70 Years of Trusted Service
+              </p>
+              <h1 className="text-balance text-4xl font-extrabold tracking-tight text-navy-foreground md:text-5xl lg:text-6xl">
+                Electrical Appliance Repairs You Can Trust
+              </h1>
+              <p className="mx-auto mt-6 max-w-2xl text-lg text-navy-foreground/80 md:text-xl lg:mx-0">
+                Claremont Electrical repairs fridges, washing machines, tumble dryers, ovens,
+                dishwashers and general household electrics — quickly, affordably and properly.
+              </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-base font-semibold text-gold-foreground transition-transform hover:scale-105"
-              >
-                Our Services
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-foreground/30 bg-transparent px-6 py-3 text-base font-medium text-navy-foreground transition-colors hover:bg-navy-foreground/10"
-              >
-                <Phone className="h-5 w-5" />
-                Contact Us
-              </a>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                <a
+                  href="#services"
+                  className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-base font-semibold text-gold-foreground transition-transform hover:scale-105"
+                >
+                  Our Services
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-foreground/30 bg-transparent px-6 py-3 text-base font-medium text-navy-foreground transition-colors hover:bg-navy-foreground/10"
+                >
+                  <Phone className="h-5 w-5" />
+                  Contact Us
+                </a>
+              </div>
+            </div>
+
+            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-3xl shadow-xl lg:block">
+              <img
+                src={heroTechnicianImage}
+                alt="Claremont Electrical technician repairing a fridge"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
             </div>
           </div>
 
@@ -239,20 +297,29 @@ function HomePage() {
             {serviceCategories.map((category) => (
               <div
                 key={category.title}
-                className="rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg"
+                className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
-                  <category.icon className="h-6 w-6" />
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                  <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gold text-gold-foreground shadow-md">
+                    <category.icon className="h-6 w-6" />
+                  </div>
                 </div>
-                <h3 className="mt-5 text-xl font-semibold text-foreground">{category.title}</h3>
-                <ul className="mt-4 space-y-2">
-                  {category.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
+                  <ul className="mt-4 space-y-2">
+                    {category.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -332,42 +399,77 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-3">
-            <a
-              href="tel:+27824571799"
-              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-gold"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
-                <Phone className="h-6 w-6" />
+          <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-5 lg:items-stretch">
+            <div className="relative hidden overflow-hidden rounded-3xl shadow-xl lg:col-span-2 lg:block">
+              <img
+                src={workshopRepairImage}
+                alt="Claremont Electrical technician repairing an appliance circuit board"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/10 to-transparent" />
+              <div className="absolute inset-x-6 bottom-6 text-navy-foreground">
+                <p className="text-sm font-semibold uppercase tracking-widest text-gold">Since 1955</p>
+                <p className="mt-1 text-lg font-semibold">70+ years fixing Cape Town's appliances</p>
               </div>
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Phone</p>
-                <p className="font-semibold text-foreground">082 457 1799</p>
-                <p className="text-sm text-muted-foreground">073 026 3190</p>
-              </div>
-            </a>
+            </div>
 
-            <a
-              href="mailto:crefriglyle@yahoo.com"
-              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-gold"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
-                <Mail className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Email</p>
-                <p className="font-semibold text-foreground">crefriglyle@yahoo.com</p>
-              </div>
-            </a>
+            <div className="rounded-3xl bg-navy p-8 text-navy-foreground shadow-xl md:p-10 lg:col-span-3">
+              <div className="space-y-6">
+                <a
+                  href="tel:+27824571799"
+                  className="flex items-center gap-4 border-b border-navy-foreground/10 pb-6 transition-colors hover:text-gold"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-navy-foreground/60">Phone</p>
+                    <p className="font-semibold">082 457 1799</p>
+                    <p className="text-sm text-navy-foreground/70">073 026 3190</p>
+                  </div>
+                </a>
 
-            <div className="flex items-center gap-4 rounded-2xl border border-border bg-card p-6">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
-                <Clock className="h-6 w-6" />
+                <a
+                  href="mailto:crefriglyle@yahoo.com"
+                  className="flex items-center gap-4 border-b border-navy-foreground/10 pb-6 transition-colors hover:text-gold"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-navy-foreground/60">Email</p>
+                    <p className="font-semibold break-all">crefriglyle@yahoo.com</p>
+                  </div>
+                </a>
+
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                    <Clock className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-navy-foreground/60">Business Hours</p>
+                    <p className="font-semibold">Monday - Saturday, 8AM - 6PM</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-sm font-medium text-muted-foreground">Business Hours</p>
-                <p className="font-semibold text-foreground">Monday - Saturday</p>
-                <p className="text-sm text-muted-foreground">8AM - 6PM</p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="tel:+27824571799"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground transition-transform hover:scale-105"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call Now
+                </a>
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-sm font-semibold text-whatsapp-foreground transition-transform hover:scale-105"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  WhatsApp Us
+                </a>
               </div>
             </div>
           </div>

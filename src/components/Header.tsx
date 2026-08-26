@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone, Award } from "lucide-react";
-import logoAsset from "../assets/claremont-logo.png.asset.json";
+import logo from "../assets/claremont-logo.png";
 
 type NavLink = { label: string } & ({ to: string; href?: never } | { href: string; to?: never });
 
@@ -17,17 +17,21 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="bg-gold py-2 text-center">
-        <div className="container mx-auto flex items-center justify-center gap-2 px-4 text-xs font-semibold text-gold-foreground md:text-sm">
-          <Award className="h-4 w-4" />
-          Over 70 years experience
+        <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-4 text-xs font-semibold text-gold-foreground md:text-sm">
+          <span className="inline-flex items-center gap-2">
+            <Award className="h-4 w-4" />
+            Over 70 years experience
+          </span>
+          <span className="hidden opacity-50 sm:inline">|</span>
+          <span>Repairs done throughout the peninsula</span>
         </div>
       </div>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link to="/" className="flex items-center gap-3">
           <img
-            src={logoAsset.url}
+            src={logo}
             alt="Claremont Electrical logo"
-            className="h-10 w-auto"
+            className="h-14 w-auto md:h-16"
           />
         </Link>
 
@@ -54,13 +58,20 @@ export function Header() {
           )}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-3 md:flex">
           <a
             href="tel:+27824571799"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground transition-transform hover:scale-105"
           >
             <Phone className="h-4 w-4" />
             082 457 1799
+          </a>
+          <a
+            href="tel:+27730263190"
+            className="inline-flex items-center gap-2 rounded-full border border-gold px-4 py-2 text-sm font-semibold text-gold transition-transform hover:scale-105"
+          >
+            <Phone className="h-4 w-4" />
+            073 026 3190
           </a>
         </div>
 
@@ -104,6 +115,13 @@ export function Header() {
             >
               <Phone className="h-4 w-4" />
               082 457 1799
+            </a>
+            <a
+              href="tel:+27730263190"
+              className="inline-flex items-center gap-2 rounded-full border border-gold px-4 py-2 text-sm font-semibold text-gold"
+            >
+              <Phone className="h-4 w-4" />
+              073 026 3190
             </a>
           </nav>
         </div>

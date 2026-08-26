@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, Clock } from "lucide-react";
-import logoAsset from "../assets/claremont-logo.png.asset.json";
+import logo from "../assets/claremont-logo.png";
 
 export function Footer() {
   return (
@@ -8,11 +8,13 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <img
-              src={logoAsset.url}
-              alt="Claremont Electrical logo"
-              className="h-10 w-auto"
-            />
+            <div className="inline-block w-fit rounded-lg bg-navy-foreground p-2">
+              <img
+                src={logo}
+                alt="Claremont Electrical logo"
+                className="h-12 w-auto"
+              />
+            </div>
             <p className="text-sm leading-relaxed text-navy-foreground/80">
               Expert electrical appliance repairs since 1955. Fridges, washing
               machines, ovens, tumble dryers and more — fixed properly, first time.
