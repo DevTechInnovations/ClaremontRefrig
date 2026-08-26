@@ -3,7 +3,9 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone, Award } from "lucide-react";
 import logoAsset from "../assets/claremont-logo.png.asset.json";
 
-const navLinks = [
+type NavLink = { label: string } & ({ to: string; href?: never } | { href: string; to?: never });
+
+const navLinks: NavLink[] = [
   { to: "/", label: "Home" },
   { href: "#services", label: "Services" },
   { href: "#contact", label: "Contact" },
