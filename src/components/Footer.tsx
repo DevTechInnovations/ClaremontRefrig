@@ -30,14 +30,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-navy-foreground/80 hover:text-gold">
+                <a href="#services" className="text-navy-foreground/80 hover:text-gold">
                   Services
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/contact" className="text-navy-foreground/80 hover:text-gold">
+                <a href="#contact" className="text-navy-foreground/80 hover:text-gold">
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

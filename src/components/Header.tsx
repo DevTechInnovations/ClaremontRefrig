@@ -3,10 +3,12 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone, Award } from "lucide-react";
 import logoAsset from "../assets/claremont-logo.png.asset.json";
 
-const navLinks = [
+type NavLink = { label: string } & ({ to: string; href?: never } | { href: string; to?: never });
+
+const navLinks: NavLink[] = [
   { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
-  { to: "/contact", label: "Contact" },
+  { href: "#services", label: "Services" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Header() {
@@ -30,16 +32,26 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              activeProps={{ className: "text-gold" }}
-              className="text-sm font-medium text-foreground transition-colors hover:text-gold"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.to ? (
+              <Link
+                key={link.to}
+                to={link.to}
+                activeProps={{ className: "text-gold" }}
+                className="text-sm font-medium text-foreground transition-colors hover:text-gold"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-foreground transition-colors hover:text-gold"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
@@ -65,16 +77,27 @@ export function Header() {
       {mobileOpen && (
         <div className="border-t border-border bg-card px-4 py-4 md:hidden">
           <nav className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
-                onClick={() => setMobileOpen(false)}
-                className="text-base font-medium text-foreground transition-colors hover:text-gold"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.to ? (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-base font-medium text-foreground transition-colors hover:text-gold"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="text-base font-medium text-foreground transition-colors hover:text-gold"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <a
               href="tel:+27824571799"
               className="mt-2 inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground"
