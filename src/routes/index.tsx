@@ -9,6 +9,9 @@ import {
   CookingPot,
   Wrench,
   Plug,
+  Microwave,
+  Coffee,
+  ShieldCheck,
   Shield,
   Award,
   Users,
@@ -21,13 +24,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Claremont Electrical repairs fridges, washing machines, ovens, dryers and dishwashers. Fast, affordable appliance repairs with a workmanship guarantee.",
+          "Claremont Electrical repairs fridges, washing machines, ovens, dryers, dishwashers and general household electrics. Fast, affordable repairs with a workmanship guarantee.",
       },
       { property: "og:title", content: "Claremont Electrical | Appliance Repairs Since 1955" },
       {
         property: "og:description",
         content:
-          "Expert repairs for fridges, washers, ovens and more. Established in 1955.",
+          "Expert repairs for fridges, washers, ovens, household electrics and more. Established in 1955.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -36,36 +39,90 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const services = [
+const serviceCategories = [
   {
     icon: Refrigerator,
-    title: "Fridges & Freezers",
-    description:
-      "Cooling faults, gas regassing, thermostats, compressors and door seal replacements.",
+    title: "Fridge & Freezer Repairs",
+    items: [
+      "Not cooling or over-freezing",
+      "Compressor & fan replacement",
+      "Thermostat & sensor faults",
+      "Gas leaks and regassing",
+      "Door seal replacement",
+      "Water dispenser & ice maker faults",
+    ],
   },
   {
     icon: WashingMachine,
-    title: "Washers & Dryers",
-    description:
-      "Drum bearings, pumps, motors, error codes and drainage problems on all major brands.",
+    title: "Washing Machine Repairs",
+    items: [
+      "Not draining or spinning",
+      "Drum bearing replacement",
+      "Pump & motor faults",
+      "Water inlet & valve issues",
+      "Error code diagnostics",
+      "Leaks and excessive vibration",
+    ],
   },
   {
     icon: CookingPot,
-    title: "Ovens & Stoves",
-    description:
-      "Elements, thermostats, hob plates, timers and control boards repaired or replaced.",
-  },
-  {
-    icon: Plug,
-    title: "General Household Electrical",
-    description:
-      "Plug and socket repairs, light fittings, tripping circuits, switches and minor wiring faults.",
+    title: "Oven, Hob & Stove Repairs",
+    items: [
+      "Element replacement",
+      "Thermostat calibration",
+      "Hob plate & induction faults",
+      "Door hinges & glass",
+      "Timer and control boards",
+      "Extractor fan repairs",
+    ],
   },
   {
     icon: Wrench,
-    title: "Fast Fault Finding",
-    description:
-      "Accurate diagnostics with an upfront quote before any repair work begins.",
+    title: "Tumble Dryer & Dishwasher",
+    items: [
+      "Dryer not heating",
+      "Belt & drum repairs",
+      "Dishwasher not draining",
+      "Spray arm & filter blockages",
+      "Heating element replacement",
+      "Programme selector faults",
+    ],
+  },
+  {
+    icon: Plug,
+    title: "General Household Electrical Repairs",
+    items: [
+      "Plug and socket replacement",
+      "Light fittings and dimmers",
+      "Tripping circuit breakers",
+      "Switch and isolator faults",
+      "Geyser electrical connections",
+      "Minor wiring repairs",
+    ],
+  },
+  {
+    icon: Microwave,
+    title: "Microwaves & Small Appliances",
+    items: [
+      "Microwave not heating",
+      "Turntable & door switch faults",
+      "Kettle & toaster repairs",
+      "Vacuum cleaner servicing",
+      "Food processor motors",
+      "Cable and plug replacement",
+    ],
+  },
+  {
+    icon: Coffee,
+    title: "Diagnostics & Servicing",
+    items: [
+      "Full fault diagnosis",
+      "Upfront written quotes",
+      "Preventative servicing",
+      "Genuine replacement parts",
+      "Repair-or-replace advice",
+      "Workmanship guarantee",
+    ],
   },
 ];
 
@@ -90,7 +147,7 @@ const highlights = [
 function HomePage() {
   return (
     <>
-      {/* Banner / Hero */}
+      {/* Hero */}
       <section className="gradient-navy relative overflow-hidden">
         <div className="container relative mx-auto px-4 py-16 md:px-6 md:py-24 lg:py-32">
           <div className="mx-auto max-w-3xl text-center">
@@ -101,23 +158,23 @@ function HomePage() {
               Electrical Appliance Repairs You Can Trust
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-navy-foreground/80 md:text-xl">
-              Claremont Electrical repairs fridges, washing machines, tumble dryers, ovens
-              and dishwashers — quickly, affordably and properly.
+              Claremont Electrical repairs fridges, washing machines, tumble dryers, ovens,
+              dishwashers and general household electrics — quickly, affordably and properly.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                to="/contact"
+              <a
+                href="#services"
                 className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-base font-semibold text-gold-foreground transition-transform hover:scale-105"
               >
-                Book a Repair
-              </Link>
+                Our Services
+              </a>
               <a
-                href="tel:+27824571799"
+                href="#contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-foreground/30 bg-transparent px-6 py-3 text-base font-medium text-navy-foreground transition-colors hover:bg-navy-foreground/10"
               >
                 <Phone className="h-5 w-5" />
-                Call Us Now
+                Contact Us
               </a>
             </div>
           </div>
@@ -168,29 +225,34 @@ function HomePage() {
       <section className="bg-background py-16 md:py-24" id="services">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">Our Services</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-gold">What We Fix</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              We Fix the Appliances You Rely On
+              Our Repair Services
             </h2>
             <p className="mt-4 text-muted-foreground">
-              From a fridge that won't cool to an oven that won't heat, our technicians
-              diagnose the fault and get your appliance working again.
+              Expert repairs on household electrical appliances and general electrics, across all
+              major brands.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {serviceCategories.map((category) => (
               <div
-                key={service.title}
-                className="group rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg"
+                key={category.title}
+                className="rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold transition-colors group-hover:bg-gold group-hover:text-gold-foreground">
-                  <service.icon className="h-6 w-6" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
+                  <category.icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-5 text-lg font-semibold text-foreground">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {service.description}
-                </p>
+                <h3 className="mt-5 text-xl font-semibold text-foreground">{category.title}</h3>
+                <ul className="mt-4 space-y-2">
+                  {category.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -257,30 +319,57 @@ function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gold-muted py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center md:px-6">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Appliance giving trouble?
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Tell us the make, model and the fault, and we'll come back with a clear repair
-            quote — no obligation.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-navy px-6 py-3 text-base font-semibold text-navy-foreground transition-transform hover:scale-105"
-            >
-              Request a Quote
-            </Link>
+      {/* Contact */}
+      <section className="bg-gold-muted py-16 md:py-24" id="contact">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-gold">Get in Touch</p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+              Contact Us
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Call, email or message us on WhatsApp. We reply quickly and quote before we repair.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-3">
             <a
               href="tel:+27824571799"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-transparent px-6 py-3 text-base font-semibold text-foreground transition-colors hover:bg-foreground/5"
+              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-gold"
             >
-              <Phone className="h-5 w-5" />
-              082 457 1799 / 073 026 3190
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
+                <Phone className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">Phone</p>
+                <p className="font-semibold text-foreground">082 457 1799</p>
+                <p className="text-sm text-muted-foreground">073 026 3190</p>
+              </div>
             </a>
+
+            <a
+              href="mailto:crefriglyle@yahoo.com"
+              className="flex items-center gap-4 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-gold"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
+                <Mail className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">Email</p>
+                <p className="font-semibold text-foreground">crefriglyle@yahoo.com</p>
+              </div>
+            </a>
+
+            <div className="flex items-center gap-4 rounded-2xl border border-border bg-card p-6">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
+                <Clock className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">Business Hours</p>
+                <p className="font-semibold text-foreground">Monday - Saturday</p>
+                <p className="text-sm text-muted-foreground">8AM - 6PM</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
