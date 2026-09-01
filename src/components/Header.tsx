@@ -26,7 +26,7 @@ export function Header() {
           <span>Repairs done throughout the peninsula</span>
         </div>
       </div>
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:h-24 md:px-6">
         <Link to="/" className="flex items-center gap-3">
           <img
             src={logo}
@@ -61,14 +61,14 @@ export function Header() {
         <div className="hidden items-center gap-3 md:flex">
           <a
             href="tel:+27824571799"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground transition-transform hover:scale-105"
           >
             <Phone className="h-4 w-4" />
             082 457 1799
           </a>
           <a
             href="tel:+27730263190"
-            className="inline-flex items-center gap-2 rounded-full border border-gold px-4 py-2 text-sm font-semibold text-gold transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 border border-gold px-4 py-2 text-sm font-semibold text-gold transition-transform hover:scale-105"
           >
             <Phone className="h-4 w-4" />
             073 026 3190
@@ -111,14 +111,14 @@ export function Header() {
             )}
             <a
               href="tel:+27824571799"
-              className="mt-2 inline-flex items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground"
+              className="mt-2 inline-flex items-center gap-2 bg-gold px-4 py-2 text-sm font-semibold text-gold-foreground"
             >
               <Phone className="h-4 w-4" />
               082 457 1799
             </a>
             <a
               href="tel:+27730263190"
-              className="inline-flex items-center gap-2 rounded-full border border-gold px-4 py-2 text-sm font-semibold text-gold"
+              className="inline-flex items-center gap-2 border border-gold px-4 py-2 text-sm font-semibold text-gold"
             >
               <Phone className="h-4 w-4" />
               073 026 3190

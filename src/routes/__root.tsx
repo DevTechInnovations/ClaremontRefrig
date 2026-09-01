@@ -80,22 +80,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Claremont Electrical | Trusted Electricians Since 1955" },
+      { title: "Claremont Electrical | Appliance & Aircon Repairs Since 1955" },
       {
         name: "description",
         content:
-          "Claremont Electrical provides reliable residential, commercial and industrial electrical services. Established in 1955, we bring decades of expertise to every job.",
+          "Claremont Electrical repairs fridges, washing machines, ovens, aircon, catering equipment and general household electrics across Cape Town and the greater peninsula. Trusted since 1955.",
       },
       { name: "author", content: "Claremont Electrical" },
-      { property: "og:title", content: "Claremont Electrical | Trusted Electricians Since 1955" },
+      { name: "theme-color", content: "#153351" },
+      {
+        property: "og:title",
+        content: "Claremont Electrical | Appliance & Aircon Repairs Since 1955",
+      },
       {
         property: "og:description",
         content:
-          "Reliable electrical services for homes and businesses. Established in 1955.",
+          "Reliable appliance and electrical repairs for homes and businesses across Cape Town and the greater peninsula. Established in 1955.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://claremontelectrical.co.za/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@ClaremontElectrical" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

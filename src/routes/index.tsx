@@ -20,7 +20,9 @@ import {
 } from "lucide-react";
 import { WHATSAPP_HREF, WhatsAppIcon } from "@/components/whatsapp";
 import workshopRepairImage from "@/assets/workshop-repair.jpg";
-import heroTechnicianImage from "@/assets/hero-technician.jpg";
+import heroFridgeImage from "@/assets/hero-fridge.jpg";
+import heroWasherImage from "@/assets/hero-washer.jpg";
+import heroMicrowaveImage from "@/assets/hero-microwave.jpg";
 import fridgeApplianceImage from "@/assets/fridge-appliance.jpg";
 import washingMachineApplianceImage from "@/assets/washing-machine-appliance.jpg";
 import ovenStoveApplianceImage from "@/assets/oven-stove-appliance.jpg";
@@ -31,24 +33,74 @@ import diagnosticsApplianceImage from "@/assets/diagnostics-appliance.jpg";
 import airconApplianceImage from "@/assets/aircon-appliance.jpg";
 import cateringApplianceImage from "@/assets/catering-appliance.jpg";
 
+const SITE_URL = "https://claremontelectrical.co.za";
+const PAGE_TITLE = "Claremont Electrical | Appliance & Aircon Repairs Since 1955";
+const PAGE_DESCRIPTION =
+  "Claremont Electrical repairs fridges, washing machines, ovens, dryers, dishwashers, aircon and catering equipment across Cape Town and the greater peninsula. Fast, affordable repairs with a workmanship guarantee since 1955.";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Claremont Electrical | Appliance Repairs Since 1955" },
-      {
-        name: "description",
-        content:
-          "Claremont Electrical repairs fridges, washing machines, ovens, dryers, dishwashers and general household electrics. Fast, affordable repairs with a workmanship guarantee.",
-      },
-      { property: "og:title", content: "Claremont Electrical | Appliance Repairs Since 1955" },
-      {
-        property: "og:description",
-        content:
-          "Expert repairs for fridges, washers, ovens, household electrics and more. Established in 1955.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}/og-image.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:locale", content: "en_ZA" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESCRIPTION },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
+      {
+        "script:ld+json": {
+          "@context": "https://schema.org",
+          "@type": "Electrician",
+          name: "Claremont Electrical",
+          image: `${SITE_URL}/og-image.png`,
+          url: `${SITE_URL}/`,
+          telephone: "+27824571799",
+          email: "crefriglyle@yahoo.com",
+          priceRange: "$$",
+          foundingDate: "1955",
+          description: PAGE_DESCRIPTION,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Claremont",
+            addressRegion: "Western Cape",
+            addressCountry: "ZA",
+          },
+          areaServed: [
+            { "@type": "City", name: "Cape Town" },
+            { "@type": "Place", name: "Cape Peninsula" },
+            { "@type": "Place", name: "Southern Suburbs" },
+            { "@type": "Place", name: "City Bowl" },
+            { "@type": "Place", name: "Atlantic Seaboard" },
+            { "@type": "Place", name: "Northern Suburbs" },
+            { "@type": "Place", name: "False Bay" },
+          ],
+          openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ],
+            opens: "08:00",
+            closes: "18:00",
+          },
+          sameAs: [],
+        },
+      },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
   }),
   component: HomePage,
 });
@@ -213,13 +265,13 @@ function HomePage() {
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-base font-semibold text-gold-foreground transition-transform hover:scale-105"
+                  className="inline-flex items-center justify-center bg-gold px-6 py-3 text-base font-semibold text-gold-foreground transition-transform hover:scale-105"
                 >
                   Our Services
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-navy-foreground/30 bg-transparent px-6 py-3 text-base font-medium text-navy-foreground transition-colors hover:bg-navy-foreground/10"
+                  className="inline-flex items-center justify-center gap-2 border border-navy-foreground/30 bg-transparent px-6 py-3 text-base font-medium text-navy-foreground transition-colors hover:bg-navy-foreground/10"
                 >
                   <Phone className="h-5 w-5" />
                   Contact Us
@@ -227,13 +279,15 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-3xl shadow-xl lg:block">
+            <div className="relative hidden aspect-[4/3] overflow-hidden shadow-xl lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-1.5">
               <img
-                src={heroTechnicianImage}
-                alt="Claremont Electrical technician repairing a fridge"
-                className="h-full w-full object-cover"
+                src={heroFridgeImage}
+                alt="Refrigerator"
+                className="col-span-1 row-span-2 h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
+              <img src={heroWasherImage} alt="Washing machine" className="h-full w-full object-cover" />
+              <img src={heroMicrowaveImage} alt="Microwave" className="h-full w-full object-cover" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
             </div>
           </div>
 
@@ -456,7 +510,7 @@ function HomePage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="tel:+27824571799"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground transition-transform hover:scale-105"
+                  className="inline-flex flex-1 items-center justify-center gap-2 bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground transition-transform hover:scale-105"
                 >
                   <Phone className="h-4 w-4" />
                   Call Now
@@ -465,7 +519,7 @@ function HomePage() {
                   href={WHATSAPP_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-sm font-semibold text-whatsapp-foreground transition-transform hover:scale-105"
+                  className="inline-flex flex-1 items-center justify-center gap-2 bg-whatsapp px-6 py-3 text-sm font-semibold text-whatsapp-foreground transition-transform hover:scale-105"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   WhatsApp Us

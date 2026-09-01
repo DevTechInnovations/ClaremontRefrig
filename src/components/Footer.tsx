@@ -12,7 +12,7 @@ export function Footer() {
               <img
                 src={logo}
                 alt="Claremont Electrical logo"
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
             </div>
             <p className="text-sm leading-relaxed text-navy-foreground/80">
@@ -53,6 +53,8 @@ export function Footer() {
               <li>Washing Machine &amp; Dryer Repairs</li>
               <li>Oven, Hob &amp; Stove Repairs</li>
               <li>Dishwasher Repairs</li>
+              <li>Air Conditioning Repairs &amp; Installation</li>
+              <li>Catering Equipment Repairs</li>
               <li>General Household Electrical Repairs</li>
               <li>Small Appliance Repairs</li>
             </ul>
@@ -91,7 +93,14 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-navy-foreground/10 pt-8 text-center text-xs text-navy-foreground/60">
-          © {new Date().getFullYear()} Claremont Electrical. All rights reserved. Est. 1955.
+          <p>
+            Serving Cape Town and the greater peninsula, including Claremont, Rondebosch,
+            Newlands, Wynberg, Kenilworth, Constantia, the City Bowl, Atlantic Seaboard,
+            Southern Suburbs, Northern Suburbs and the False Bay coast.
+          </p>
+          <p className="mt-3">
+            © {new Date().getFullYear()} Claremont Electrical. All rights reserved. Est. 1955.
+          </p>
         </div>
       </div>
     </footer>
