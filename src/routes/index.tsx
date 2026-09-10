@@ -225,7 +225,7 @@ function HomePage() {
                 Established in 1955 — Over 70 Years of Trusted Service
               </p>
               <h1 className="text-balance text-4xl font-extrabold tracking-tight text-navy-foreground md:text-5xl lg:text-6xl">
-                Refrigeration &amp; Cooling Specialists Since 1955
+                Commercial Refrigeration &amp; Cooling Specialists
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-navy-foreground/80 md:text-xl lg:mx-0">
                 From walk-in cold rooms to domestic fridges, Claremont Refrigeration
