@@ -67,9 +67,11 @@ export const Route = createFileRoute("/")({
             addressCountry: "ZA",
           },
           areaServed: [
+            { "@type": "AdministrativeArea", name: "Western Cape" },
             { "@type": "City", name: "Cape Town" },
-            { "@type": "Place", name: "Cape Peninsula" },
+            { "@type": "Place", name: "Claremont" },
             { "@type": "Place", name: "Southern Suburbs" },
+            { "@type": "Place", name: "Cape Peninsula" },
             { "@type": "Place", name: "City Bowl" },
             { "@type": "Place", name: "Atlantic Seaboard" },
             { "@type": "Place", name: "Northern Suburbs" },
@@ -88,7 +90,7 @@ export const Route = createFileRoute("/")({
             opens: "08:00",
             closes: "18:00",
           },
-          sameAs: [],
+          sameAs: ["https://share.google/K82BISfi8Mvn2YLGS"],
         },
       },
     ],
@@ -255,6 +257,8 @@ function HomePage() {
               <img
                 src={heroFridgeImage}
                 alt="Stainless steel refrigerator installed in a modern kitchen"
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
@@ -328,6 +332,8 @@ function HomePage() {
                     <img
                       src={category.image}
                       alt={category.title}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                   ) : (
@@ -437,6 +443,8 @@ function HomePage() {
               <img
                 src={fridgeApplianceImage}
                 alt="Refrigerator serviced by Claremont Refrigeration"
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/10 to-transparent" />
