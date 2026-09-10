@@ -1,5 +1,5 @@
 export const WHATSAPP_NUMBER = "27824571799";
-export const WHATSAPP_MESSAGE = "Hi Claremont Electrical, I'd like to enquire about your services.";
+export const WHATSAPP_MESSAGE = "Hi Claremont Refrigeration, I'd like to enquire about your services.";
 
 export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 

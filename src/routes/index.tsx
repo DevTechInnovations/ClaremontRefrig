@@ -1,42 +1,34 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   Phone,
   Mail,
   Clock,
-  Zap,
-  Refrigerator,
-  WashingMachine,
-  CookingPot,
-  Wrench,
-  Plug,
-  Microwave,
-  Coffee,
   Snowflake,
+  Warehouse,
+  Droplets,
+  Wind,
   ChefHat,
+  Refrigerator,
   ShieldCheck,
   Shield,
   Award,
   Users,
+  type LucideIcon,
 } from "lucide-react";
 import { WHATSAPP_HREF, WhatsAppIcon } from "@/components/whatsapp";
-import workshopRepairImage from "@/assets/workshop-repair.jpg";
 import heroFridgeImage from "@/assets/hero-fridge.jpg";
-import heroWasherImage from "@/assets/hero-washer.jpg";
-import heroMicrowaveImage from "@/assets/hero-microwave.jpg";
 import fridgeApplianceImage from "@/assets/fridge-appliance.jpg";
-import washingMachineApplianceImage from "@/assets/washing-machine-appliance.jpg";
-import ovenStoveApplianceImage from "@/assets/oven-stove-appliance.jpg";
-import tumbleDryerApplianceImage from "@/assets/tumble-dryer-appliance.jpg";
-import householdElectricalImage from "@/assets/household-electrical.jpg";
-import microwaveApplianceImage from "@/assets/microwave-appliance.jpg";
-import diagnosticsApplianceImage from "@/assets/diagnostics-appliance.jpg";
 import airconApplianceImage from "@/assets/aircon-appliance.jpg";
 import cateringApplianceImage from "@/assets/catering-appliance.jpg";
+import coldRoomImage from "@/assets/cold-room.jpg";
+import iceMachineImage from "@/assets/ice-machine.jpg";
+import waterChillerImage from "@/assets/water-chiller.jpg";
 
-const SITE_URL = "https://claremontelectrical.co.za";
-const PAGE_TITLE = "Claremont Electrical | Appliance & Aircon Repairs Since 1955";
+const SITE_URL = "https://claremontrefrigeration.co.za";
+const PAGE_TITLE =
+  "Claremont Refrigeration | Cold Rooms, Aircon & Refrigeration Repairs Since 1955";
 const PAGE_DESCRIPTION =
-  "Claremont Electrical repairs fridges, washing machines, ovens, dryers, dishwashers, aircon and catering equipment across Cape Town and the greater peninsula. Fast, affordable repairs with a workmanship guarantee since 1955.";
+  "Claremont Refrigeration builds and repairs cold rooms, freezer rooms and wine cellars, and services ice machines, water chillers, dehumidifiers, air conditioning, catering equipment and domestic fridges across Cape Town and the greater peninsula. Trusted since 1955.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,8 +51,8 @@ export const Route = createFileRoute("/")({
       {
         "script:ld+json": {
           "@context": "https://schema.org",
-          "@type": "Electrician",
-          name: "Claremont Electrical",
+          "@type": "HVACBusiness",
+          name: "Claremont Refrigeration",
           image: `${SITE_URL}/og-image.png`,
           url: `${SITE_URL}/`,
           telephone: "+27824571799",
@@ -105,122 +97,97 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const serviceCategories = [
+type ServiceCategory = {
+  icon: LucideIcon;
+  image?: string;
+  title: string;
+  tag: string;
+  items: string[];
+};
+
+const serviceCategories: ServiceCategory[] = [
   {
-    icon: Refrigerator,
-    image: fridgeApplianceImage,
-    title: "Fridge & Freezer Repairs",
+    icon: Warehouse,
+    image: coldRoomImage,
+    title: "Cold Rooms, Freezer Rooms & Wine Cellars",
+    tag: "Repair & Manufacture",
     items: [
-      "Not cooling or over-freezing",
-      "Compressor & fan replacement",
-      "Thermostat & sensor faults",
-      "Gas leaks and regassing",
-      "Door seal replacement",
-      "Water dispenser & ice maker faults",
-    ],
-  },
-  {
-    icon: WashingMachine,
-    image: washingMachineApplianceImage,
-    title: "Washing Machine Repairs",
-    items: [
-      "Not draining or spinning",
-      "Drum bearing replacement",
-      "Pump & motor faults",
-      "Water inlet & valve issues",
-      "Error code diagnostics",
-      "Leaks and excessive vibration",
-    ],
-  },
-  {
-    icon: CookingPot,
-    image: ovenStoveApplianceImage,
-    title: "Oven, Hob & Stove Repairs",
-    items: [
-      "Element replacement",
-      "Thermostat calibration",
-      "Hob plate & induction faults",
-      "Door hinges & glass",
-      "Timer and control boards",
-      "Extractor fan repairs",
-    ],
-  },
-  {
-    icon: Wrench,
-    image: tumbleDryerApplianceImage,
-    title: "Tumble Dryer & Dishwasher",
-    items: [
-      "Dryer not heating",
-      "Belt & drum repairs",
-      "Dishwasher not draining",
-      "Spray arm & filter blockages",
-      "Heating element replacement",
-      "Programme selector faults",
-    ],
-  },
-  {
-    icon: Plug,
-    image: householdElectricalImage,
-    title: "General Household Electrical Repairs",
-    items: [
-      "Plug and socket replacement",
-      "Light fittings and dimmers",
-      "Tripping circuit breakers",
-      "Switch and isolator faults",
-      "Geyser electrical connections",
-      "Minor wiring repairs",
-    ],
-  },
-  {
-    icon: Microwave,
-    image: microwaveApplianceImage,
-    title: "Microwaves & Small Appliances",
-    items: [
-      "Microwave not heating",
-      "Turntable & door switch faults",
-      "Kettle & toaster repairs",
-      "Vacuum cleaner servicing",
-      "Food processor motors",
-      "Cable and plug replacement",
+      "Custom design & manufacture",
+      "Panel, door & gasket repairs",
+      "Refrigeration plant & compressors",
+      "Evaporator & condenser servicing",
+      "Temperature monitoring & controls",
+      "Breakdown call-outs & maintenance",
     ],
   },
   {
     icon: Snowflake,
-    image: airconApplianceImage,
-    title: "Air Conditioning Repairs & Installation",
+    image: iceMachineImage,
+    title: "Ice & Flake Ice Machines",
+    tag: "Sales, Repairs & Servicing",
     items: [
-      "All makes repaired and serviced",
-      "New unit supply and installation",
+      "All makes serviced & repaired",
+      "Flake, nugget & cube ice machines",
+      "Not making or dropping ice",
+      "Auger, compressor & pump faults",
+      "Water filtration & scale control",
+      "Preventative servicing plans",
+    ],
+  },
+  {
+    icon: Droplets,
+    image: waterChillerImage,
+    title: "Water Chillers & Dehumidifiers",
+    tag: "Repairs & Servicing",
+    items: [
+      "Industrial & process water chillers",
+      "Dehumidifier repairs & servicing",
+      "Pump, fan & flow faults",
+      "Gas leaks & regassing",
+      "Thermostat & control faults",
+      "Routine maintenance",
+    ],
+  },
+  {
+    icon: Wind,
+    image: airconApplianceImage,
+    title: "Air Conditioning",
+    tag: "Repairs & Installation",
+    items: [
+      "All makes repaired & serviced",
+      "New unit supply & installation",
       "Not cooling or not heating",
-      "Gas leaks and regassing",
-      "Noisy or leaking units",
-      "Routine servicing and maintenance",
+      "Gas leaks & regassing",
+      "Noisy, dripping or iced-up units",
+      "Filter cleans & routine servicing",
     ],
   },
   {
     icon: ChefHat,
     image: cateringApplianceImage,
-    title: "Catering Equipment Repairs",
+    title: "Catering Equipment & Machinery",
+    tag: "Heating, Cooling & Mechanical",
     items: [
-      "All makes of catering equipment",
       "Commercial fridges & freezers",
-      "Ovens, stoves & fryers",
+      "Ovens, stoves, fryers & grills",
+      "Bain-maries, urns & boilers",
+      "Mechanical & moving machinery",
       "Dishwashers & glasswashers",
-      "Urns, boilers & bain-maries",
       "Preventative maintenance plans",
     ],
   },
   {
-    icon: Coffee,
-    image: diagnosticsApplianceImage,
-    title: "Diagnostics & Servicing",
+    icon: Refrigerator,
+    image: fridgeApplianceImage,
+    title: "Domestic Refrigerators & Freezers",
+    tag: "Repairs & Regassing",
     items: [
-      "Full fault diagnosis",
-      "Upfront written quotes",
-      "Preventative servicing",
-      "Genuine replacement parts",
-      "Repair-or-replace advice",
-      "Workmanship guarantee",
+      "Not cooling or over-freezing",
+      "Compressor & fan replacement",
+      "Thermostat & sensor faults",
+      "Gas leaks & regassing",
+      "Door seal replacement",
+      "Water & ice dispenser faults",
     ],
   },
 ];
@@ -228,18 +195,21 @@ const serviceCategories = [
 const highlights = [
   {
     icon: Shield,
-    title: "Guaranteed Repairs",
-    description: "Every repair is backed by a workmanship guarantee and genuine parts.",
+    title: "Guaranteed Workmanship",
+    description:
+      "Every repair, installation and cold room we build is backed by our workmanship guarantee and quality parts.",
   },
   {
     icon: Award,
     title: "Since 1955",
-    description: "Over 70 years of appliance repair experience across every major brand.",
+    description:
+      "Seven decades keeping Cape Town's homes, restaurants and businesses cold.",
   },
   {
     icon: Users,
     title: "Honest Advice",
-    description: "We tell you when a repair makes sense — and when it simply doesn't.",
+    description:
+      "We tell you when a repair makes sense — and when a replacement is the smarter spend.",
   },
 ];
 
@@ -251,21 +221,23 @@ function HomePage() {
         <div className="container relative mx-auto px-4 py-16 md:px-6 md:py-24 lg:py-32">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:max-w-xl lg:text-left">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-gold">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-ice">
                 Established in 1955 — Over 70 Years of Trusted Service
               </p>
               <h1 className="text-balance text-4xl font-extrabold tracking-tight text-navy-foreground md:text-5xl lg:text-6xl">
-                Electrical Appliance Repairs You Can Trust
+                Refrigeration &amp; Cooling Specialists Since 1955
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-navy-foreground/80 md:text-xl lg:mx-0">
-                Claremont Electrical repairs fridges, washing machines, tumble dryers, ovens,
-                dishwashers and general household electrics — quickly, affordably and properly.
+                From walk-in cold rooms to domestic fridges, Claremont Refrigeration
+                designs, manufactures, installs and repairs refrigeration, ice,
+                chilling and air-conditioning systems — quickly, affordably and
+                properly.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center bg-gold px-6 py-3 text-base font-semibold text-gold-foreground transition-transform hover:scale-105"
+                  className="inline-flex items-center justify-center bg-ice px-6 py-3 text-base font-semibold text-ice-foreground transition-transform hover:scale-105"
                 >
                   Our Services
                 </a>
@@ -279,37 +251,35 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="relative hidden aspect-[4/3] overflow-hidden shadow-xl lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-1.5">
+            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl shadow-xl lg:block">
               <img
                 src={heroFridgeImage}
-                alt="Refrigerator"
-                className="col-span-1 row-span-2 h-full w-full object-cover"
+                alt="Stainless steel refrigerator installed in a modern kitchen"
+                className="h-full w-full object-cover"
               />
-              <img src={heroWasherImage} alt="Washing machine" className="h-full w-full object-cover" />
-              <img src={heroMicrowaveImage} alt="Microwave" className="h-full w-full object-cover" />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent" />
             </div>
           </div>
 
           {/* Contact info bar */}
           <div className="mx-auto mt-12 grid max-w-4xl gap-4 rounded-2xl border border-navy-foreground/10 bg-navy-foreground/5 p-6 backdrop-blur-sm sm:grid-cols-3">
             <div className="flex items-center gap-3 text-navy-foreground/90">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ice/10 text-ice">
                 <Phone className="h-5 w-5" />
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-medium text-navy-foreground/60">Phone</p>
                 <div className="flex flex-col text-sm font-semibold">
-                  <a href="tel:+27824571799" className="hover:text-gold">082 457 1799</a>
-                  <a href="tel:+27730263190" className="hover:text-gold">073 026 3190</a>
+                  <a href="tel:+27824571799" className="hover:text-ice">082 457 1799</a>
+                  <a href="tel:+27730263190" className="hover:text-ice">073 026 3190</a>
                 </div>
               </div>
             </div>
             <a
               href="mailto:crefriglyle@yahoo.com"
-              className="flex items-center gap-3 text-navy-foreground/90 transition-colors hover:text-gold"
+              className="flex items-center gap-3 text-navy-foreground/90 transition-colors hover:text-ice"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ice/10 text-ice">
                 <Mail className="h-5 w-5" />
               </div>
               <div className="min-w-0">
@@ -318,7 +288,7 @@ function HomePage() {
               </div>
             </a>
             <div className="flex items-center gap-3 text-navy-foreground/90">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ice/10 text-ice">
                 <Clock className="h-5 w-5" />
               </div>
               <div className="min-w-0">
@@ -329,21 +299,21 @@ function HomePage() {
           </div>
         </div>
 
-        {/* Decorative bolt */}
-        <Zap className="absolute -right-8 -bottom-8 h-64 w-64 rotate-12 text-gold/5 md:h-96 md:w-96" />
+        {/* Decorative snowflake */}
+        <Snowflake className="absolute -right-8 -bottom-8 h-64 w-64 rotate-12 text-ice/5 md:h-96 md:w-96" />
       </section>
 
       {/* Services */}
       <section className="bg-background py-16 md:py-24" id="services">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">What We Fix</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-ice">What We Do</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Our Repair Services
+              Our Services
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Expert repairs on household electrical appliances and general electrics, across all
-              major brands.
+              Commercial and domestic refrigeration, cooling and air conditioning —
+              repaired, manufactured and maintained across every major make.
             </p>
           </div>
 
@@ -351,24 +321,33 @@ function HomePage() {
             {serviceCategories.map((category) => (
               <div
                 key={category.title}
-                className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg"
+                className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lg"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={category.image}
-                    alt={category.title}
-                    className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                  <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gold text-gold-foreground shadow-md">
+                  {category.image ? (
+                    <img
+                      src={category.image}
+                      alt={category.title}
+                      className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                    />
+                  ) : (
+                    <div className="gradient-navy flex h-full w-full items-center justify-center">
+                      <category.icon className="h-20 w-20 text-navy-foreground/25" />
+                    </div>
+                  )}
+                  <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-ice text-ice-foreground shadow-md">
                     <category.icon className="h-6 w-6" />
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-ice">
+                    {category.tag}
+                  </p>
                   <ul className="mt-4 space-y-2">
                     {category.items.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                        <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-ice" />
                         {item}
                       </li>
                     ))}
@@ -385,16 +364,16 @@ function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-gold">
+              <p className="text-sm font-semibold uppercase tracking-widest text-ice">
                 Why Choose Us
               </p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-                Repair It, Don't Replace It
+                Built, Fixed &amp; Maintained Since 1955
               </h2>
               <p className="mt-4 text-muted-foreground">
-                A good repair costs a fraction of a new appliance. We quote upfront, use
-                quality parts, and stand behind every job we do — the same way we have
-                since 1955.
+                From an emergency fridge breakdown to a purpose-built cold room, we
+                quote upfront, use quality parts and stand behind every job — the
+                same way we have since 1955.
               </p>
 
               <div className="mt-8 space-y-6">
@@ -414,25 +393,25 @@ function HomePage() {
 
             <div className="rounded-2xl bg-card p-8 shadow-sm">
               <div className="grid gap-6 sm:grid-cols-2">
-                <div className="rounded-xl bg-gold-muted p-6 text-center">
+                <div className="rounded-xl bg-ice-muted p-6 text-center">
                   <p className="text-4xl font-extrabold text-navy">70+</p>
                   <p className="mt-1 text-sm font-medium text-foreground/80">Years Experience</p>
                 </div>
                 <div className="rounded-xl bg-navy p-6 text-center text-navy-foreground">
-                  <p className="text-4xl font-extrabold text-gold">All</p>
+                  <p className="text-4xl font-extrabold text-ice">All</p>
                   <p className="mt-1 text-sm font-medium text-navy-foreground/80">
-                    Major Brands
+                    Makes &amp; Models
                   </p>
                 </div>
                 <div className="rounded-xl bg-navy p-6 text-center text-navy-foreground">
-                  <p className="text-4xl font-extrabold text-gold">100%</p>
+                  <p className="text-4xl font-extrabold text-ice">100%</p>
                   <p className="mt-1 text-sm font-medium text-navy-foreground/80">
                     Upfront Quotes
                   </p>
                 </div>
-                <div className="rounded-xl bg-gold-muted p-6 text-center">
+                <div className="rounded-xl bg-ice-muted p-6 text-center">
                   <p className="text-4xl font-extrabold text-navy">10k+</p>
-                  <p className="mt-1 text-sm font-medium text-foreground/80">Appliances Repaired</p>
+                  <p className="mt-1 text-sm font-medium text-foreground/80">Call-Outs Completed</p>
                 </div>
               </div>
             </div>
@@ -441,29 +420,29 @@ function HomePage() {
       </section>
 
       {/* Contact */}
-      <section className="bg-gold-muted py-16 md:py-24" id="contact">
+      <section className="bg-ice-muted py-16 md:py-24" id="contact">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold">Get in Touch</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-ice">Get in Touch</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Contact Us
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Call, email or message us on WhatsApp. We reply quickly and quote before we repair.
+              Call, email or message us on WhatsApp. We reply quickly and quote before we start.
             </p>
           </div>
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-5 lg:items-stretch">
             <div className="relative hidden overflow-hidden rounded-3xl shadow-xl lg:col-span-2 lg:block">
               <img
-                src={workshopRepairImage}
-                alt="Claremont Electrical technician repairing an appliance circuit board"
+                src={fridgeApplianceImage}
+                alt="Refrigerator serviced by Claremont Refrigeration"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/10 to-transparent" />
               <div className="absolute inset-x-6 bottom-6 text-navy-foreground">
-                <p className="text-sm font-semibold uppercase tracking-widest text-gold">Since 1955</p>
-                <p className="mt-1 text-lg font-semibold">70+ years fixing Cape Town's appliances</p>
+                <p className="text-sm font-semibold uppercase tracking-widest text-ice">Since 1955</p>
+                <p className="mt-1 text-lg font-semibold">70+ years keeping Cape Town cold</p>
               </div>
             </div>
 
@@ -471,9 +450,9 @@ function HomePage() {
               <div className="space-y-6">
                 <a
                   href="tel:+27824571799"
-                  className="flex items-center gap-4 border-b border-navy-foreground/10 pb-6 transition-colors hover:text-gold"
+                  className="flex items-center gap-4 border-b border-navy-foreground/10 pb-6 transition-colors hover:text-ice"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ice/15 text-ice">
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
@@ -485,9 +464,9 @@ function HomePage() {
 
                 <a
                   href="mailto:crefriglyle@yahoo.com"
-                  className="flex items-center gap-4 border-b border-navy-foreground/10 pb-6 transition-colors hover:text-gold"
+                  className="flex items-center gap-4 border-b border-navy-foreground/10 pb-6 transition-colors hover:text-ice"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ice/15 text-ice">
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
@@ -497,7 +476,7 @@ function HomePage() {
                 </a>
 
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ice/15 text-ice">
                     <Clock className="h-5 w-5" />
                   </div>
                   <div>
@@ -510,7 +489,7 @@ function HomePage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="tel:+27824571799"
-                  className="inline-flex flex-1 items-center justify-center gap-2 bg-gold px-6 py-3 text-sm font-semibold text-gold-foreground transition-transform hover:scale-105"
+                  className="inline-flex flex-1 items-center justify-center gap-2 bg-ice px-6 py-3 text-sm font-semibold text-ice-foreground transition-transform hover:scale-105"
                 >
                   <Phone className="h-4 w-4" />
                   Call Now

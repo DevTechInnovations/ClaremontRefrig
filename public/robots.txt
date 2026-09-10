@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://claremontelectrical.co.za/sitemap.xml
+Sitemap: https://claremontrefrigeration.co.za/sitemap.xml

@@ -1,6 +1,14 @@
-# Claremont Electrical Website
+# Claremont Refrigeration Website
 
-Can you design me a website for a company called Claremont Electrical. It should have a home services and contact page. There should be a floating whatsapp button as well. The home page should have a banner with contact information. I have attached the logo.
+Marketing site for Claremont Refrigeration — a Cape Town refrigeration, cooling and
+air-conditioning company established in 1955. Single-page layout with a hero, services,
+"why choose us" and contact sections, a contact-information banner and a floating
+WhatsApp button.
+
+Services covered: cold rooms, freezer rooms and wine cellars (repair and manufacture);
+ice and flake ice machines; water chillers and dehumidifiers; air-conditioning repairs
+and installations; catering equipment and mechanical machinery (heating and cooling);
+and domestic refrigerators and freezers.
 
 This project was built with [Lovable](https://lovable.dev).
 

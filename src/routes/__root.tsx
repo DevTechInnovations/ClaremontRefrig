@@ -80,25 +80,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Claremont Electrical | Appliance & Aircon Repairs Since 1955" },
+      { title: "Claremont Refrigeration | Cold Rooms, Aircon & Refrigeration Repairs Since 1955" },
       {
         name: "description",
         content:
-          "Claremont Electrical repairs fridges, washing machines, ovens, aircon, catering equipment and general household electrics across Cape Town and the greater peninsula. Trusted since 1955.",
+          "Claremont Refrigeration builds and repairs cold rooms, freezer rooms and wine cellars, and services ice machines, water chillers, dehumidifiers, air conditioning, catering equipment and domestic fridges across Cape Town and the greater peninsula. Trusted since 1955.",
       },
-      { name: "author", content: "Claremont Electrical" },
-      { name: "theme-color", content: "#153351" },
+      { name: "author", content: "Claremont Refrigeration" },
+      { name: "theme-color", content: "#14273d" },
       {
         property: "og:title",
-        content: "Claremont Electrical | Appliance & Aircon Repairs Since 1955",
+        content: "Claremont Refrigeration | Cold Rooms, Aircon & Refrigeration Repairs Since 1955",
       },
       {
         property: "og:description",
         content:
-          "Reliable appliance and electrical repairs for homes and businesses across Cape Town and the greater peninsula. Established in 1955.",
+          "Refrigeration, cooling and air-conditioning specialists for homes and businesses across Cape Town and the greater peninsula. Repairs, manufacture and maintenance since 1955.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://claremontelectrical.co.za/og-image.png" },
+      { property: "og:image", content: "https://claremontrefrigeration.co.za/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -109,6 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
       },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
