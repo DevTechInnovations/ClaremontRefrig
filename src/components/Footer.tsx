@@ -88,12 +88,18 @@ export function Footer() {
 
         <div className="mt-12 border-t border-navy-foreground/10 pt-8 text-center text-xs text-navy-foreground/60">
           <p>
-            Serving Claremont, the Southern Suburbs and greater Cape Town, Western Cape —
-            including Rondebosch, Newlands, Wynberg, Kenilworth, Constantia, the City Bowl,
-            Atlantic Seaboard, Northern Suburbs and the False Bay coast.
+            © {new Date().getFullYear()} Claremont Refrigeration. All rights reserved. Est. 1955.
           </p>
           <p className="mt-3">
-            © {new Date().getFullYear()} Claremont Refrigeration. All rights reserved. Est. 1955.
+            Powered by{" "}
+            <a
+              href="https://www.devtechinnovations.co.za"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-navy-foreground/80 hover:text-ice"
+            >
+              Devtech Innovations
+            </a>
           </p>
         </div>
       </div>
