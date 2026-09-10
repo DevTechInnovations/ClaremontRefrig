@@ -486,21 +486,21 @@ function HomePage() {
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="tel:+27824571799"
-                  className="inline-flex flex-1 items-center justify-center gap-2 bg-ice px-6 py-3 text-sm font-semibold text-ice-foreground transition-transform hover:scale-105"
+                  className="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap bg-ice px-4 py-3 text-sm font-semibold text-ice-foreground transition-transform hover:scale-105"
                 >
-                  <Phone className="h-4 w-4" />
+                  <Phone className="h-4 w-4 shrink-0" />
                   Call Now
                 </a>
                 <a
                   href={WHATSAPP_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex flex-1 items-center justify-center gap-2 bg-whatsapp px-6 py-3 text-sm font-semibold text-whatsapp-foreground transition-transform hover:scale-105"
+                  className="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap bg-whatsapp px-4 py-3 text-sm font-semibold text-whatsapp-foreground transition-transform hover:scale-105"
                 >
-                  <WhatsAppIcon className="h-4 w-4" />
+                  <WhatsAppIcon className="h-4 w-4 shrink-0" />
                   WhatsApp Us
                 </a>
               </div>
